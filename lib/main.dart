@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'next_page.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -40,23 +42,20 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('test!!!'),
-        actions: <Widget>[
-          Icon(Icons.add),
-          Icon(Icons.share),
-        ],
       ),
-      body: Container(
-        height: double.infinity,
-        color: Colors.red,
-        child: Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Row(
-            children: <Widget>[
-              Text('ffffijiojo'),
-              Text('ffffijiojo'),
-              Text('ffffijiojo'),
-            ],
-          ),
+      body: Center(
+        child: RaisedButton(
+          child: Text('次へ'),
+          onPressed: () {
+            // ここを押したら反応するコードを書く
+            // 画面遷移のコード
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => NextPage(),
+              ),
+            );
+          },
         ),
       ),
       floatingActionButton: FloatingActionButton(
