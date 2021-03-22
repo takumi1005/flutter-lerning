@@ -45,21 +45,31 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text('test!!!'),
       ),
-      body: Center(
-        child: RaisedButton(
-          child: Text(text),
-          onPressed: () async {
-            // ここを押したら反応するコードを書く
-            // 画面遷移のコード
-            final result = await Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => NextPage('takumi'),
-              ),
-            );
-            text = result;
-            print(result);
-          },
+      body: Container(
+        width: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Image.network(
+              'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg',
+            ),
+            RaisedButton(
+              child: Text(text),
+              onPressed: () async {
+                // ここを押したら反応するコードを書く
+                // 画面遷移のコード
+                final result = await Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => NextPage('takumi'),
+                  ),
+                );
+                text = result;
+                print(text);
+              },
+            ),
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
