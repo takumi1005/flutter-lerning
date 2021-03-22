@@ -51,33 +51,20 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Icon(
-              Icons.cancel_rounded,
-              size: 80.0,
+            Text(
+              'hello',
+              style: TextStyle(
+                fontSize: 40,
+                color: Colors.green,
+                fontWeight: FontWeight.bold,
+                fontStyle: FontStyle.italic,
+                decoration: TextDecoration.underline,
+              ),
             ),
-            RaisedButton(
-              child: Text(text),
-              onPressed: () async {
-                // ここを押したら反応するコードを書く
-                // 画面遷移のコード
-                final result = await Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => NextPage('takumi'),
-                  ),
-                );
-                text = result;
-                print(text);
-              },
-            ),
+            Text('world')
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
