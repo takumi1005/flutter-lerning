@@ -29,20 +29,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  String text = '次へ';
-
-  final myFocusNode = FocusNode();
-
-  String name;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,28 +37,99 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Container(
         width: double.infinity,
-        child: Column(
+        child: ListView(
           children: <Widget>[
-            TextField(
-              autofocus: true,
-              decoration: InputDecoration(
-                hintText: '田中太郎',
-              ),
-              onChanged: (text) {
-                name = text;
+            ListTile(
+              leading: Icon(Icons.info),
+              title: Text('お問い合わせ'),
+              trailing: Icon(Icons.arrow_forward_ios),
+              onTap: () {
+                // 画面遷移
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => NextPage('あああ')),
+                );
               },
             ),
-            TextField(
-              autofocus: true,
-              decoration: InputDecoration(
-                hintText: '趣味',
-              ),
+            ListTile(
+              leading: Icon(Icons.photo_album),
+              title: Text('Album'),
             ),
-            RaisedButton(
-              child: Text('新規登録する'),
-              onPressed: () {
-                // TODO: ここにフォーカスするためのコード
-              },
+            ListTile(
+              leading: Icon(Icons.phone),
+              title: Text('Phone'),
+            ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+            ),
+            ListTile(
+              leading: Icon(Icons.photo_album),
+              title: Text('Album'),
+            ),
+            ListTile(
+              leading: Icon(Icons.phone),
+              title: Text('Phone'),
+            ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+            ),
+            ListTile(
+              leading: Icon(Icons.photo_album),
+              title: Text('Album'),
+            ),
+            ListTile(
+              leading: Icon(Icons.phone),
+              title: Text('Phone'),
+            ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+            ),
+            ListTile(
+              leading: Icon(Icons.photo_album),
+              title: Text('Album'),
+            ),
+            ListTile(
+              leading: Icon(Icons.phone),
+              title: Text('Phone'),
+            ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+            ),
+            ListTile(
+              leading: Icon(Icons.photo_album),
+              title: Text('Album'),
+            ),
+            ListTile(
+              leading: Icon(Icons.phone),
+              title: Text('Phone'),
+            ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+            ),
+            ListTile(
+              leading: Icon(Icons.photo_album),
+              title: Text('Album'),
+            ),
+            ListTile(
+              leading: Icon(Icons.phone),
+              title: Text('Phone'),
+            ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+            ),
+            ListTile(
+              leading: Icon(Icons.photo_album),
+              title: Text('Album'),
+            ),
+            ListTile(
+              leading: Icon(Icons.phone),
+              title: Text('Phone'),
             ),
           ],
         ),
