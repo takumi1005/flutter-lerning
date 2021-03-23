@@ -39,6 +39,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   String text = '次へ';
 
+  final myFocusNode = FocusNode();
+
+  String name;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,25 +52,31 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Container(
         width: double.infinity,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'hello',
-              style: TextStyle(
-                fontSize: 40,
-                color: Colors.green,
-                fontWeight: FontWeight.bold,
-                fontStyle: FontStyle.italic,
-                decoration: TextDecoration.underline,
+            TextField(
+              autofocus: true,
+              decoration: InputDecoration(
+                hintText: '田中太郎',
+              ),
+              onChanged: (text) {
+                name = text;
+              },
+            ),
+            TextField(
+              autofocus: true,
+              decoration: InputDecoration(
+                hintText: '趣味',
               ),
             ),
-            Text('world')
+            RaisedButton(
+              child: Text('新規登録する'),
+              onPressed: () {
+                // TODO: ここにフォーカスするためのコード
+              },
+            ),
           ],
         ),
       ),
     );
   }
 }
-
-// git test
